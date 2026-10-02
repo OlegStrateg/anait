@@ -1,0 +1,7 @@
+services:
+  anait-lite:
+    build: .
+    container_name: anait-lite
+    restart: unless-stopped
+    env_file:
+      - .env
