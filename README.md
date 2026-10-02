@@ -24,6 +24,14 @@
 
 Сообщение пользователя → психологический разбор → релевантная память → Таро/интерпретация → ответ Анаит → обновление памяти.
 
+## Lite MVP
+
+Lite-бот работает как постоянный Node.js-процесс через Telegram Long Polling.
+
+Vercel, публичный HTTPS-адрес и Telegram webhook не используются.
+
+Запуск переносим на любой сервер через Docker Compose.
+
 ## Провайдер модели
 
 Lite MVP работает через API Master как внешний LLM-шлюз.
@@ -33,6 +41,7 @@ Lite MVP работает через API Master как внешний LLM-шлю
 LLM_API_KEY=
 LLM_BASE_URL=
 LLM_MODEL=gpt-6-luna
+LLM_API_STYLE=chat_completions
 ```
 
 Реальные ключи не хранятся в GitHub.
@@ -50,6 +59,9 @@ TELEGRAM_BOT_TOKEN_LITE=
 LLM_API_KEY=
 LLM_BASE_URL=
 LLM_MODEL=gpt-6-luna
+LLM_API_STYLE=chat_completions
 ```
 
-На сервере/хостинге реальные значения задаются через Secrets / Environment Variables.
+На сервере реальные значения задаются через закрытый `.env` или Secrets / Environment Variables.
+
+Инструкция запуска: `docs/Запуск Lite MVP.md`.
